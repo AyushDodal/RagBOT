@@ -19,7 +19,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-if prompt := st.chat_input("What is up?", accept_file = True, file_type = ['pdf', 'jpg', 'jpeg', 'png', 'mp3', 'mp4']):
+if prompt := st.chat_input("What is up?", accept_file = True):
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
