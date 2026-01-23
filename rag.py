@@ -1,4 +1,5 @@
 from llama_index.core.node_parser import SentenceSplitter
+from llama_index.readers.file import PDFReader
 
 def chunkify(file):
   # 1. Convert the UploadedFile (bytes) into LlamaIndex Documents
