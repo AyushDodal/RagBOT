@@ -19,17 +19,21 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-prompt = st.chat_input("What is up?", accept_file = True)
+prompt = st.chat_input("What is up?", accept_file = True, file_type = ["jpg", "jpeg", "png"])
 
-if prompt and prompt["files"]:
-    st.image(prompt["files"][0])
-
-if prompt and prompt.text:
+if prompt:
     # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    if prompt.text:
+        st.markdown(f"**Your message:** {prompt.text}")
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
 
+    # Display uploaded file name
+    if prompt.files:
+        for uploaded_file in prompt.files:
+            st.markdown(f"**Attachment name:** {uploaded_file.name}")
+    
+    
     response = f"Echo: {prompt}"
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
