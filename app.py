@@ -34,7 +34,7 @@ if prompt:
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
-    # Display file if attached
+    # Display file name if attached
     if prompt.files:
         for uploaded_file in prompt.files:
             st.markdown(f"**Attachment name:** {uploaded_file.name}")
