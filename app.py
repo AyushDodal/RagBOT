@@ -5,7 +5,7 @@ st.set_page_config(
   page_icon = "📚 🔎 🤖 💬"
 )
 
-st.write("Hello!👋", \n, "This is a Retrieval Augmented Generation Bot - RAG-BOT.", \n, "You can upload files, they will get stored in a Vector Database for the LLM to refer." )
+st.write("Hello!👋 This is a Retrieval Augmented Generation Bot - RAG-BOT. You can upload files, they will get stored in a Vector Database for the LLM to refer." )
 
 
 
