@@ -16,25 +16,6 @@ def chunkify_from_upload(uploaded_file):
     
     return nodes
 
-
-#def vector_store():
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def main():
   st.set_page_config(
     page_title = "RAG-BOT",
