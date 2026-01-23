@@ -1,4 +1,6 @@
 import streamlit as st
+from llama_index.core import SimpleDirectoryReader
+from rag import chunkify
 
 st.set_page_config(
   page_title = "RAG-BOT",
@@ -19,7 +21,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-prompt = st.chat_input("What is up?", accept_file = True, accept_audio = True, file_type = ["jpg", "jpeg", "png"])
+prompt = st.chat_input("What is up?", accept_file = True, accept_audio = True, file_type = ["pdf", "jpg", "jpeg", "png"])
 
 if prompt:
     # Display user message in chat message container
@@ -37,6 +39,7 @@ if prompt:
     # Display file name if attached
     if prompt.files:
         for uploaded_file in prompt.files:
-            st.markdown(f"**Attachment name:** {uploaded_file.name}")
+            # st.markdown(f"**Attachment name:** {uploaded_file.name}")
+            chunkify(SimpleDirectoryReader(input_files=uploaded_file).load_data())
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
