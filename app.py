@@ -19,7 +19,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("What is up?", accept_file = True, file_type = ['pdf', 'jpg', 'jpeg', 'png', 'mp3', 'mp4']):
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
@@ -29,5 +29,9 @@ if prompt := st.chat_input("What is up?"):
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
+    # Display file if attached
+    if prompt.files:
+        for uploaded_file in prompt.files:
+            st.markdown(f"**Attachment name:** {uploaded_file.name}")
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
