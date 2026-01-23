@@ -40,6 +40,7 @@ if prompt:
     if prompt.files:
         for uploaded_file in prompt.files:
             # st.markdown(f"**Attachment name:** {uploaded_file.name}")
-            chunkify(uploaded_file)
+            nodes = chunkify(uploaded_file)
+            st.markdown(f"**File: ** {nodes}")
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
