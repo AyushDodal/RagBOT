@@ -19,7 +19,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-prompt = st.chat_input("What is up?", accept_file = True, file_type = ["jpg", "jpeg", "png"])
+prompt = st.chat_input("What is up?", accept_file = True, accept_audio = True, file_type = ["jpg", "jpeg", "png"])
 
 if prompt:
     # Display user message in chat message container
