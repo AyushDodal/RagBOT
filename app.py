@@ -24,7 +24,7 @@ prompt = st.chat_input("What is up?", accept_file = True, accept_audio = True, f
 if prompt:
     # Display user message in chat message container
     if prompt.text:
-        st.markdown(f"**Your message:** {prompt.text}")
+        st.chat_message("user").markdown(f"**Your message:** {prompt.text}")
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
