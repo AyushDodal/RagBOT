@@ -28,13 +28,9 @@ if prompt:
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
-    # Display uploaded file name
-    if prompt.files:
-        for uploaded_file in prompt.files:
-            st.markdown(f"**Attachment name:** {uploaded_file.name}")
     
     
-    response = f"Echo: {prompt}"
+    response = f"Echo: {prompt.text}"
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
