@@ -105,9 +105,9 @@ def main():
         response = f"Echo: {prompt.text}"
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
-            st.markdown(response)
+            st.markdown(assistant_reply)
         # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
 
 
 
