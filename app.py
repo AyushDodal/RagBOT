@@ -1,7 +1,7 @@
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
 
 
 llm = ChatOpenAI(temperature=0.6, model="gpt-4o-mini")
