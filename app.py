@@ -38,7 +38,7 @@ def load_documents(file_paths):
 
 
 def chunkify(text):
-    splitter = SentenceSplitter(max_length=1024)
+    splitter = SentenceSplitter(1024)
     nodes = splitter.get_nodes_from_documents(text)
     return nodes
 
