@@ -1,5 +1,5 @@
 import os
-from unstructured.partition.pdf import partition_pdf
+from pypdf import PDFReader
 import cv2
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
@@ -28,12 +28,12 @@ def _get_file_path(file_upload):
 # Load and extract text from one or multiple PDF/docx/pptx/txt files.
 def load_documents(file_paths):
     all_text = []
+
     for file in file_paths:
-        elements = partition_pdf(filename=file)
-        text_elements = [element.text for element in elements]
-        all_text.append("\n\n".join(text_elements))
-        
-    print(all_text)
+        reader = PdfReader(file)
+        text = "\n".join(page.extract_text() or "" for page in reader.pages)
+        all_text.append(text)
+
     return "\n\n".join(all_text)
 
 
