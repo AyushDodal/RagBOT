@@ -1,3 +1,5 @@
+import os
+
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
