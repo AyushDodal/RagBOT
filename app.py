@@ -96,18 +96,26 @@ def main():
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": user_prompt})
 
-        if prompt.files:
-            for upload_file in prompt.files:
-                file_paths = _get_file_path(upload_file)
-                text = load_documents(file_paths)
-                chunks = chunkify(text)
-                vectorstores = get_vectorstore(chunks)
-                assistant_reply = rag_chain(vectorstores, user_prompt)
+        #if prompt.files:
+            #for upload_file in prompt.files:
+                #file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
+                #text = load_documents(file_paths)
+                #chunks = chunkify(text)
+                #vectorstores = get_vectorstore(chunks)
+                #assistant_reply = rag_chain(vectorstores, user_prompt)
 
         
         response = f"Echo: {prompt.text}"
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
+            
+            file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
+            text = load_documents(file_paths)
+            chunks = chunkify(text)
+            vectorstores = get_vectorstore(chunks)
+            assistant_reply = rag_chain(vectorstores, user_prompt)
+
+            
             st.markdown(assistant_reply)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
