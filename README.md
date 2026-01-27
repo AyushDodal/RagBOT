@@ -3,6 +3,19 @@
 A simple Retrieval-Augmented Generation (RAG) chatbot built with LangChain, OpenAI, FAISS, and Streamlit.
 Upload documents and ask questions grounded in your data.
 
+
+## How it Works
+
+1. Upload a document
+
+2. Text is extracted and split into chunks
+
+3. Chunks are embedded and stored in FAISS
+
+4. Relevant chunks are retrieved per query
+
+5. LLM answers using retrieved context
+
 ## Features
 PDF text ingestion
 
