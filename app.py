@@ -40,7 +40,7 @@ def load_documents(file_paths):
 def chunkify(text):
     if not isinstance(text, str):
         text = "\n".join(text)
-    splitter = SentenceSplitter(1024)
+    splitter = SentenceSplitter()
     nodes = splitter.get_nodes_from_documents(text)
     return nodes
 
