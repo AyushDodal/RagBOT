@@ -65,6 +65,8 @@ def format_docs(docs):
 def rag_chain(vectorstore, question):
     prompt = PromptTemplate.from_template(
     """Use the context to answer.
+    If you don't know the answer, say I don't know, don't try to make up an answer. 
+    Use three sentences maximum and keep the answer concise.
     context: {context}
     question: {question}
     answer:""")
@@ -129,8 +131,8 @@ def main():
 
             
             st.markdown(assistant_reply)
-        # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
+            # Add assistant response to chat history
+            st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
 
 
 
