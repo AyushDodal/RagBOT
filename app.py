@@ -94,7 +94,7 @@ def main():
         st.session_state.messages.append({"role": "user", "content": user_prompt})
 
         if prompt.files:
-            for upload_file in files:
+            for upload_file in prompt.files:
                 file_paths = _get_file_path(upload_file)
                 text = load_documents(file_paths)
                 chunks = chunkify(text)
