@@ -41,8 +41,8 @@ def chunkify(text):
     if not isinstance(text, str):
         text = "\n".join(text)
     splitter = SentenceSplitter("en")
-    nodes = splitter.get_nodes_from_documents(text)
-    return nodes
+    #nodes = splitter.get_nodes_from_documents(text)
+    return splitter.split(text)
 
     
 def get_vectorstore(chunks):
