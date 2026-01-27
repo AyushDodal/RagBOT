@@ -1,4 +1,4 @@
-unstructured[pdf]
+unstructured[all-docs]
 langchain_community
 langchain-openai
 langchain-text-splitters 
