@@ -7,6 +7,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain.prompts import PromptTemplate
 
 
 
@@ -62,6 +63,11 @@ def format_docs(docs):
 
 # Build and run a Retrieval-Augmented Generation (RAG) chain.
 def rag_chain(vectorstore, question):
+    prompt = PromptTemplate.from_template(
+    """Use the context to answer.
+    context: {context}
+    question: {question}
+    answer:""")
     qa_chain = (
         {
             "context": vectorstore.as_retriever() | format_docs,
