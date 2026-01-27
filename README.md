@@ -32,7 +32,8 @@ Optional password protection
 
 
 ## Architecture Diagram:
-<img width="836" height="378" alt="Architectural Diagram" src="https://github.com/user-attachments/assets/397ff50b-f49f-47cf-84a0-8af8fd30e35e" />
+
+![unnamed](https://github.com/user-attachments/assets/b1677b41-2f4f-4536-8fb9-0cb6a978f29c)
 
 
 
