@@ -2,6 +2,7 @@
 
 A simple Retrieval-Augmented Generation (RAG) chatbot built with LangChain, OpenAI, FAISS, and Streamlit.
 Upload documents and ask questions grounded in your data.
+LINK : https://ragbot-y3srqbqyet7bqzz5yt9dui.streamlit.app/
 
 
 ## How it Works
