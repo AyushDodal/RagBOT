@@ -102,6 +102,16 @@ def main():
     # Initialize chat history
     if "messages" not in st.session_state:
         st.session_state.messages = []
+
+    uploaded_files = st.file_uploader(
+    "Upload PDF",
+    type=["pdf"],
+    accept_multiple_files=True)
+
+    if file_upload:     
+        st.success("File uploaded successfully! You can now ask your question.")
+
+
     
     # Display chat messages from history on app rerun
     for message in st.session_state.messages:
