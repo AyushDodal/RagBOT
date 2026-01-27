@@ -1,5 +1,5 @@
 from sentence_splitter import SentenceSplitter
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
