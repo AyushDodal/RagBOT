@@ -29,7 +29,7 @@ def _get_file_path(file_upload):
 def load_documents(file_paths):
     all_text = []
     for file in file_paths:
-        elements = partition(filename=file)
+        elements = partition(filename=file, strategy="fast")
         text_elements = [element.text for element in elements]
         all_text.append("\n\n".join(text_elements))
         
