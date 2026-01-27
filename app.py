@@ -1,7 +1,7 @@
 import os
 from pypdf import PdfReader
 
-from sentence_splitter import SentenceSplitter
+from sentence_splitter.splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
