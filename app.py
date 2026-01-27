@@ -12,7 +12,7 @@ from langchain_core.prompts import PromptTemplate
 
 
 
-llm = ChatOpenAI(temperature=0.6, model="gpt-4o-mini")
+llm = ChatOpenAI(temperature=0.6, model="gpt-5.1")
 
 
 # Generate temporary file path of uploaded docs
