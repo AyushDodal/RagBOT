@@ -1,5 +1,5 @@
 import os
-from pypdf import PDFReader
+from pypdf import PdfReader
 import cv2
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
