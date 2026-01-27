@@ -90,7 +90,14 @@ def rag_chain(vectorstore, question):
 def main():
     import streamlit as st
 
-    st.title("Echo Bot")
+    # Password Protecting the Web Page
+    if st.secrets["APP_PASSWORD"] != st.text_input("Password", type="password"):
+    st.stop()
+
+    st.title("RAG ChatBot")
+    st.subheader("A Retrieval Augmented Generation Project.")
+
+    st.write("Welcome to my ChatBot. You can use this to analyze PDFs. Upload your PDF and ask the bot any detailed questions")
     
     # Initialize chat history
     if "messages" not in st.session_state:
