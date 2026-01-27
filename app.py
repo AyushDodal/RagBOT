@@ -1,6 +1,6 @@
 import os
 from unstructured.partition.auto import partition
-
+import cv2
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
