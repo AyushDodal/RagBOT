@@ -8,4 +8,4 @@ streamlit
 faiss-cpu 
 langchainhub
 openai
-sentence_splitter
+sentence-splitter
