@@ -1,4 +1,4 @@
-from sentence_splitter import SentenceSplitter
+'''from sentence_splitter import SentenceSplitter
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -91,7 +91,7 @@ def main():
         # Display user message in chat message container
         st.chat_message("user").markdown(user_prompt)
         # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": user_prompt})
+        st.session_state.messages.append({"role": "user", "content": user_prompt})'''
 
         '''if prompt.files:
             for upload_file in files:
@@ -102,7 +102,7 @@ def main():
                 assistant_reply = rag_chain(vectorstores, user_prompt)'''
 
         
-        response = f"Echo: {prompt.text}"
+        '''response = f"Echo: {prompt.text}"
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             st.markdown(response)
@@ -115,4 +115,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()'''
+
+
+
+import streamlit as st
+
+with st.chat_message("user"):
+    st.write("Hello 👋")
