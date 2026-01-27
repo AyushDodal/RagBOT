@@ -1,4 +1,5 @@
 import os
+from unstructured.partition.auto import partition
 
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
