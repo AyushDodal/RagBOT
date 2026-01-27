@@ -92,7 +92,7 @@ def main():
 
     # Password Protecting the Web Page
     if st.secrets["APP_PASSWORD"] != st.text_input("Password", type="password"):
-    st.stop()
+        st.stop()
 
     st.title("RAG ChatBot")
     st.subheader("A Retrieval Augmented Generation Project.")
