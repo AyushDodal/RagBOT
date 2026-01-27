@@ -108,7 +108,7 @@ def main():
     type=["pdf"],
     accept_multiple_files=True)
 
-    if file_upload:     
+    if uploaded_files:     
         st.success("File uploaded successfully! You can now ask your question.")
 
 
