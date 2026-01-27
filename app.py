@@ -1,5 +1,5 @@
 import os
-from unstructured.partition.auto import partition
+from unstructured.partition.pdf import partition_pdf
 import cv2
 from sentence_splitter import SentenceSplitter
 from langchain_openai import ChatOpenAI
@@ -29,7 +29,7 @@ def _get_file_path(file_upload):
 def load_documents(file_paths):
     all_text = []
     for file in file_paths:
-        elements = partition(filename=file, strategy="fast")
+        elements = partition_pdf(filename=file, strategy="fast")
         text_elements = [element.text for element in elements]
         all_text.append("\n\n".join(text_elements))
         
