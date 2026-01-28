@@ -140,8 +140,8 @@ def main():
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             
-            file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
-            text = load_documents(file_paths)
+            #file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
+            text = [load_documents(file_paths) for file_paths in prompt.files]
             if not text:
                 st.error("PDF has no extractable text (likely scanned).")
                 st.stop()
