@@ -122,7 +122,7 @@ def main():
     # React to user input
     prompt = st.chat_input("What is up?")
     if prompt:
-        user_prompt = prompt.text
+        user_prompt = prompt
         # Display user message in chat message container
         st.chat_message("user").markdown(user_prompt)
         # Add user message to chat history
@@ -137,7 +137,7 @@ def main():
                 #assistant_reply = rag_chain(vectorstores, user_prompt)
 
         
-        response = f"Echo: {prompt.text}"
+        #response = f"Echo: {prompt.text}"
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             
