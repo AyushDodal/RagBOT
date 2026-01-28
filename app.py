@@ -31,10 +31,10 @@ def _get_file_path(file_upload):
 
 
 # Load and extract text from one or multiple PDF/docx/pptx/txt files.
-def load_documents(file_paths):
+def load_documents(files):
     all_text = []
 
-    for file in file_paths:
+    for file in files:
         reader = PdfReader(file)
         text = "\n".join(page.extract_text() or "" for page in reader.pages)
         all_text.append(text)
@@ -103,6 +103,7 @@ def main():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
+    # Upload PDF Files
     uploaded_files = st.file_uploader(
     "Upload PDF",
     type=["pdf"],
@@ -141,7 +142,7 @@ def main():
         with st.chat_message("assistant"):
             
             #file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
-            text = [load_documents(file_paths) for file_paths in prompt.files]
+            text = load_documents(uploaded_files)
             if not text:
                 st.error("PDF has no extractable text (likely scanned).")
                 st.stop()
