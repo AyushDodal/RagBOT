@@ -120,7 +120,7 @@ def main():
             st.markdown(message["content"])
     
     # React to user input
-    prompt = st.chat_input("What is up?", accept_file=True, accept_audio=True, file_type=["pdf", "jpg", "jpeg", "png"])
+    prompt = st.chat_input("What is up?")
     if prompt:
         user_prompt = prompt.text
         # Display user message in chat message container
