@@ -142,7 +142,15 @@ def main():
             
             file_paths = [_get_file_path(upload_file) for upload_file in prompt.files]
             text = load_documents(file_paths)
+            if not text:
+                st.error("PDF has no extractable text (likely scanned).")
+                st.stop()
+            
             chunks = chunkify(text)
+            if not chunks or all(not c.strip() for c in chunks):
+                st.error("No readable text found in this PDF.")
+                st.stop()
+
             vectorstores = get_vectorstore(chunks)
             assistant_reply = rag_chain(vectorstores, user_prompt)
 
